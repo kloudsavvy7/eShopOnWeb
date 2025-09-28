@@ -12,8 +12,8 @@ COPY . .
 #RUN dotnet restore "./PublicApi/PublicApi.csproj"
 #COPY . .
 WORKDIR "/app/src/PublicApi"
-RUN PWD
-RUN ls
+RUN echo "Current directory:" && pwd && \
+    echo "List of files:" && ls -R
 RUN dotnet restore "/app/src/PublicApi/PublicApi.csproj"
 
 RUN dotnet build "./PublicApi.csproj" -c Release -o /app/build
