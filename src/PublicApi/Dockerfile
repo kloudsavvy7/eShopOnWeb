@@ -14,7 +14,7 @@ COPY . .
 WORKDIR "/app/src/PublicApi"
 # Debugging: check where we are and what files exist
 RUN echo "Current directory is:" && pwd
-RUN echo "Files in current directory:" && ls -la
+RUN echo "Files in current directory:" && ls
 RUN echo "Recursive file list:" && ls -R
 RUN dotnet restore "/app/src/PublicApi/PublicApi.csproj"
 
